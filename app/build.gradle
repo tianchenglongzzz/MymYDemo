@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'//GreenDao
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.example.xiangmu.myapplication"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    greendao {
+        //数据库的schema版本，也可以理解为数据库版本号
+        schemaVersion 1
+        //设置DaoMaster、DaoSession、Dao包名，也就是要放置这些类的包的全路径。
+        daoPackage 'com.example.xiangmu.myapplication.greedao'
+        //设置DaoMaster、DaoSession、Dao目录
+        targetGenDir 'src/main/java'
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '27.1.1'
+            }
+        }
+    }
+
+}
+dependencies {
+    debugApi 'com.squareup.leakcanary:leakcanary-android:1.3'
+    releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
+    /* androidTestCompile('com.android.support:support-annotations:26.1.0') {
+            force = true    }*/
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.android.support:appcompat-v7:27.1.1'
+    api 'com.android.support.constraint:constraint-layout:1.1.3'
+    api 'com.android.support:support-v4:27.1.1'
+    api 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    api 'com.squareup.retrofit2:retrofit:2.3.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    //
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'io.reactivex.rxjava2:rxjava:2.0.1'
+    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    api 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //XrecyclerView
+    api 'com.jcodecraeer:xrecyclerview:1.5.9'
+    api 'com.android.support:recyclerview-v7:23.4.0'
+    //卡片布局
+    api 'com.android.support:cardview-v7:27.1.0'
+    //Glide
+    api 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    //日历控件按钮
+    api 'com.prolificinteractive:material-calendarview:1.4.0'
+    //EventBus
+    api 'org.greenrobot:eventbus:3.1.1'
+    api 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    //log
+    api 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    //banner
+    api 'com.youth.banner:banner:1.4.10'
+    api 'org.greenrobot:eventbus:3.1.1'
+    api 'com.facebook.fresco:fresco:0.13.0'
+    //解析网络数据
+    api 'org.jsoup:jsoup:1.10.3'
+    api 'org.greenrobot:greendao:3.2.2'
+    //GreenDao数据库
+    api 'com.yanzhenjie:recyclerview-swipe:1.0.0'
+    implementation files('libs/tbs_sdk_thirdapp_v2.2.0.1096_36549_sharewithdownload_withoutGame_obfs_20160830_211645.jar')
+}

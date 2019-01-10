@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".base.activity.zhihu.ZhiHuDataActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:transitionName="shareView"
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:toolbarId="@+id/toolbar">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/img_ToolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+                <TextView
+                    android:text="@string/setting_image"
+                    android:textColor="#fff"
+                    android:textSize="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_name_xiangqing"
+                    android:layout_gravity="bottom|left"
+                    />
+            </FrameLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_view"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_zhi_hu_data" />
+
+    <FrameLayout
+        android:id="@+id/frment_zhu_hu_data"
+        android:scrollbars="vertical"
+        app:layout_scrollFlags="scroll"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="#e8e8e8"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:text="点赞"
+                android:gravity="center"
+                android:id="@+id/tv_detail_bottom_like"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/ic_daily_like"
+                android:textColor="#a9a9a9" />
+
+            <TextView
+                android:gravity="center"
+                android:text="评论"
+                android:id="@+id/tv_detail_bottom_comment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/ic_daily_comment"
+                android:textColor="
+                #a9a9a9" />
+            <TextView
+                android:id="@+id/tv_detail_bottom_share"
+                android:gravity="center"
+                android:text="分享"
+                android:drawableTop="@mipmap/ic_daily_share"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_zhi_hu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
+         android:src="@mipmap/ic_toolbar_like_n"
+          />
+
+
+</android.support.design.widget.CoordinatorLayout>

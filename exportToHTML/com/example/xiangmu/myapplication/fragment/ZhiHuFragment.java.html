@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>ZhiHuFragment.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(98,151,85); font-style: italic; }
+.s3 { color: rgb(98,151,85); font-weight: bold; font-style: italic; }
+.s4 { color: rgb(128,128,128); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+ZhiHuFragment.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">com.example.xiangmu.myapplication.fragment</span><span class="s0">;</span><span class="s1"> 
+ 
+ 
+</span><span class="s0">import </span><span class="s1">android.support.design.widget.TabLayout</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v4.app.Fragment</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">android.support.v4.view.ViewPager</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">com.example.xiangmu.myapplication.R</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.example.xiangmu.myapplication.adapter.ZhiHuRBaoFrementApdate</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.example.xiangmu.myapplication.base.fragment.BaseFragment</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.example.xiangmu.myapplication.presenter.ZhihuPresenter</span><span class="s0">;</span><span class="s1"> 
+</span><span class="s0">import </span><span class="s1">com.example.xiangmu.myapplication.view.ZhiZuView</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s0">import </span><span class="s1">butterknife.BindView</span><span class="s0">;</span><span class="s1"> 
+ 
+</span><span class="s2">/** 
+ * A simple {</span><span class="s3">@link </span><span class="s2">Fragment} subclass. 
+ */</span><span class="s1"> 
+</span><span class="s0">public class </span><span class="s1">ZhiHuFragment </span><span class="s0">extends </span><span class="s1">BaseFragment&lt;ZhiZuView</span><span class="s0">,</span><span class="s1">ZhihuPresenter&lt;ZhiZuView&gt;&gt; { 
+ 
+  @BindView(R.id.tab_zhihurbao) 
+    TabLayout mTabLayout</span><span class="s0">;</span><span class="s1"> 
+  @BindView(R.id.vp_zhihurbao) 
+    ViewPager mViewPager</span><span class="s0">;</span><span class="s1"> 
+ 
+    </span><span class="s0">public </span><span class="s1">ZhiHuFragment() { 
+        </span><span class="s4">// Required empty public constructor</span><span class="s1"> 
+    } 
+ 
+ 
+    @Override 
+    </span><span class="s0">public void </span><span class="s1">viewCreared() { 
+        </span><span class="s0">super</span><span class="s1">.viewCreared()</span><span class="s0">;</span><span class="s1"> 
+ 
+    } 
+  - 
+    
+ 
+    @Override 
+    </span><span class="s0">public int </span><span class="s1">getViewLayout() { 
+        </span><span class="s0">return </span><span class="s1">R.layout.fragment_zhi_hu</span><span class="s0">;</span><span class="s1"> 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public void </span><span class="s1">initData() { 
+ 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public </span><span class="s1">ZhihuPresenter&lt;ZhiZuView&gt; ctreatePresrnter() { 
+        </span><span class="s0">return new </span><span class="s1">ZhihuPresenter()</span><span class="s0">;</span><span class="s1"> 
+    } 
+} 
+</span></pre>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="200dp">
+<com.facebook.drawee.view.SimpleDraweeView
+    android:background="@mipmap/ic_launcher_round"
+    android:id="@+id/gan_sim_face"
+    android:layout_width="500dp"
+    android:layout_height="200dp" />
+    <TextView
+        android:id="@+id/gan_text_name"
+        android:textColor="#fff"
+        android:layout_margin="20dp"
+        android:layout_gravity="bottom|right"
+        android:text="by 大耗子"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</FrameLayout>
